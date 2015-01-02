@@ -10,7 +10,7 @@ module SpecSupport
   def profile_methods
     require 'method_profiler'
 
-    profiler = MethodProfiler.observe(Wasabi::Parser)
+    profiler = MethodProfiler.observe(WasabiV3::Parser)
     yield
     puts profiler.report
   end

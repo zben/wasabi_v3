@@ -1,26 +1,26 @@
-# Wasabi
+# WasabiV3
 
 A simple WSDL parser.
 
-[![Build Status](https://secure.travis-ci.org/savonrb/wasabi.png)](http://travis-ci.org/savonrb/wasabi)
-[![Gem Version](https://badge.fury.io/rb/wasabi.png)](http://badge.fury.io/rb/wasabi)
-[![Code Climate](https://codeclimate.com/github/savonrb/wasabi.png)](https://codeclimate.com/github/savonrb/wasabi)
-[![Coverage Status](https://coveralls.io/repos/savonrb/wasabi/badge.png?branch=master)](https://coveralls.io/r/savonrb/wasabi)
+[![Build Status](https://secure.travis-ci.org/savonrb/wasabi_v3.png)](http://travis-ci.org/savonrb/wasabi_v3)
+[![Gem Version](https://badge.fury.io/rb/wasabi_v3.png)](http://badge.fury.io/rb/wasabi_v3)
+[![Code Climate](https://codeclimate.com/github/savonrb/wasabi_v3.png)](https://codeclimate.com/github/savonrb/wasabi_v3)
+[![Coverage Status](https://coveralls.io/repos/savonrb/wasabi_v3/badge.png?branch=master)](https://coveralls.io/r/savonrb/wasabi_v3)
 
 
 ## Installation
 
-Wasabi is available through [Rubygems](http://rubygems.org/gems/wasabi) and can be installed via:
+WasabiV3 is available through [Rubygems](http://rubygems.org/gems/wasabi_v3) and can be installed via:
 
 ```
-$ gem install wasabi
+$ gem install wasabi_v3
 ```
 
 
 ## Getting started
 
 ``` ruby
-document = Wasabi.document File.read("some.wsdl")
+document = WasabiV3.document File.read("some.wsdl")
 ```
 
 Get the SOAP endpoint:
