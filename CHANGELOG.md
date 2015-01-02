@@ -3,7 +3,7 @@
 * Fix: [#48](https://github.com/savonrb/wasabi_v3/issue/48) Remove dependency on mime-type gem
 
 # 3.3.0 (2014-05-03)
-* Feature: [#44](https://github.com/savonrb/wasabi_v3/pull/44) adds a feature to specify the HTTPI adapter you'd like to use.
+* Feature: [#44](https://github.com/savonrb/wasabi_v3/pull/44) adds a feature to specify the HTTPI2 adapter you'd like to use.
 
 # 3.2.3 (2013-12-16)
 * Fix [#39](https://github.com/savonrb/wasabi_v3/pull/39) fixes new regression in operation names. Huge thank you to #leoping for investigating this and issuing a pull request.
@@ -46,7 +46,7 @@
 
 ## 3.0.0 (2012-12-17)
 
-* Updated to HTTPI 2.0 to play nicely with Savon 2.0.
+* Updated to HTTPI2 2.0 to play nicely with Savon 2.0.
 
 ## 2.5.1 (2012-08-22)
 

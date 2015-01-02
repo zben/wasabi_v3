@@ -1,4 +1,4 @@
-class FakeAdapterForTest < HTTPI::Adapter::Base
+class FakeAdapterForTest < HTTPI2::Adapter::Base
 
   register :fake_adapter_for_test
 
@@ -13,6 +13,6 @@ class FakeAdapterForTest < HTTPI::Adapter::Base
   def request(method)
     @@methods ||= []
     @@methods.push method
-    HTTPI::Response.new(200, {}, 'wsdl_by_adapter')
+    HTTPI2::Response.new(200, {}, 'wsdl_by_adapter')
   end
 end

@@ -5,7 +5,7 @@ describe WasabiV3::Document do
   subject { WasabiV3::Document.new fixture(:authentication).read }
 
   it "accepts a URL" do
-    expect(HTTPI).to receive(:get) { HTTPI::Response.new(200, {}, "wsdl") }
+    expect(HTTPI2).to receive(:get) { HTTPI2::Response.new(200, {}, "wsdl") }
 
     document = WasabiV3::Document.new("http://example.com?wsdl")
     expect(document.xml).to eq("wsdl")

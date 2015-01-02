@@ -4,20 +4,20 @@ describe WasabiV3::Resolver do
 
   describe "#resolve" do
     it "resolves remote documents" do
-      expect(HTTPI).to receive(:get) { HTTPI::Response.new(200, {}, "wsdl") }
+      expect(HTTPI2).to receive(:get) { HTTPI2::Response.new(200, {}, "wsdl") }
       xml = WasabiV3::Resolver.new("http://example.com?wsdl").resolve
       expect(xml).to eq("wsdl")
     end
 
     it "resolves remote documents with custom adapter" do
-      prev_logging = HTTPI.instance_variable_get(:@log)
-      HTTPI.log = false # Don't pollute rspec output by request logging
+      prev_logging = HTTPI2.instance_variable_get(:@log)
+      HTTPI2.log = false # Don't pollute rspec output by request logging
       xml = WasabiV3::Resolver.new("http://example.com?wsdl", nil, :fake_adapter_for_test).resolve
       expect(xml).to eq("wsdl_by_adapter")
       expect(FakeAdapterForTest.class_variable_get(:@@requests).size).to eq(1)
       expect(FakeAdapterForTest.class_variable_get(:@@requests).first.url).to eq(URI.parse("http://example.com?wsdl"))
       expect(FakeAdapterForTest.class_variable_get(:@@methods)).to eq([:get])
-      HTTPI.log = prev_logging
+      HTTPI2.log = prev_logging
     end
 
     it "resolves local documents" do
@@ -36,8 +36,8 @@ describe WasabiV3::Resolver do
         "content-type" => "text/html"
       }
       body = "<html><head><title>404 Not Found</title></head><body>Oops!</body></html>"
-      failed_response = HTTPI::Response.new(code, headers, body)
-      HTTPI.stub(:get => failed_response)
+      failed_response = HTTPI2::Response.new(code, headers, body)
+      HTTPI2.stub(:get => failed_response)
       expect do
         WasabiV3::Resolver.new("http://example.com?wsdl").resolve
       end.to raise_error { |ex|

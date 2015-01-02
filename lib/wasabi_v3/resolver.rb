@@ -1,4 +1,4 @@
-require "httpi"
+require "httpi2"
 
 module WasabiV3
 
@@ -20,7 +20,7 @@ module WasabiV3
 
     def initialize(document, request = nil, adapter = nil)
       @document = document
-      @request  = request || HTTPI::Request.new
+      @request  = request || HTTPI2::Request.new
       @adapter  = adapter
     end
 
@@ -40,7 +40,7 @@ module WasabiV3
 
     def load_from_remote
       request.url = document
-      response = HTTPI.get(request, adapter)
+      response = HTTPI2.get(request, adapter)
 
       raise HTTPError.new("Error: #{response.code}", response) if response.error?
 
